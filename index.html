@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radial Menu</title>
+  <style>
+    body {
+      background: rgb(34, 5, 5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .radial-menu {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+
+    .center-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-70%, -50%);
+      width: 240px;
+      height: 240px;
+      background-image: url('parts/circle.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    .sector {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 2;
+      cursor: pointer;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .sector.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sector:hover {
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+      z-index: 4;
+    }
+
+    .sector-1 {
+      background-image: url('parts/sector.png');
+      transform: rotate(61deg);
+      padding-right: 355px;
+      margin-top: 132px;
+    }
+
+    .sector-2 {
+      background-image: url('parts/sector.png');
+      transform: rotate(356deg);
+      padding-right: 276px;
+    }
+
+    .sector-3 {
+      background-image: url('parts/sector.png');
+      transform: rotate(125deg);
+      margin-left: 76px;
+      padding-top: 450px;
+    }
+
+    a.sector {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="radial-menu">
+    <a href="page-2.html" class="sector sector-1"></a>
+    <a href="page-1.html" class="sector sector-2"></a>
+    <a href="page-3.html" class="sector sector-3"></a>
+    <div class="center-circle" id="startBtn"></div>
+  </div>
+
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const sectors = document.querySelectorAll('.sector');
+
+    let sectorsVisible = false;
+
+    startBtn.addEventListener('click', () => {
+      sectorsVisible = !sectorsVisible;
+      sectors.forEach(sector => {
+        sector.classList.toggle('visible', sectorsVisible);
+      });
+    });
+  </script>
+</body>
+</html>
