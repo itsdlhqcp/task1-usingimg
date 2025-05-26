@@ -1,0 +1,170 @@
+body {
+    background: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .radial-menu {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+
+  .center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    width: 170px;
+    height: 170px;
+    background-image: url('parts/circle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .sector, .sectorsub {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sector:hover,
+  .sectorsub:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    z-index: 4;
+  }
+
+  .sector-1 {
+    width: 34%;
+    height: 34%;
+    background-image: url('parts/sector.png');
+    transform: rotate(55deg);
+    padding-right: 380px;
+    margin-top: 144px;
+  }
+
+  .sector-2 {
+    width: 34%;
+    height: 34%;
+    background-image: url('parts/sector.png');
+    transform: rotate(353deg);
+    margin-top: 59px;
+    padding-right: 312px;
+  }
+
+  .sector-3 {
+    width: 34%;
+    height: 34%;
+    background-image: url('parts/sector.png');
+    transform: rotate(116deg);
+    margin-left: 132px;
+    padding-top: 432px;
+  }
+
+  /* Sector 1 subsets - original positions */
+  .sector-1-sub-1 {
+    width: 69%;
+    height: 78%;
+    background-image: url('parts/sector.png');
+    transform: rotate(113deg);
+    margin-left: 102px;
+    padding-top: 420px;
+  }
+
+  .sector-1-sub-2 {
+    width: 68%;
+    height: 68%;
+    background-image: url('parts/sector.png');
+    transform: rotate(51.5deg);
+    margin-left: 214px;
+    padding-top: 162px;
+  }
+
+  .sector-1-sub-3 {
+    width: 69%;
+    height: 69%;
+    background-image: url('parts/sector.png');
+    transform: rotate(-10.5deg);
+    top: -89px;
+    left: 61%;
+    margin-left: -28%;
+    z-index: 12;
+  }
+
+  /* Sector 2 subsets - adjusted positions */
+  .sector-2-sub-1 {
+    width: 69%;
+    height: 78%;
+    background-image: url('parts/sector.png');
+    transform: rotate(113deg);
+    margin-left: 102px;
+    padding-top: 420px;
+  }
+
+  .sector-2-sub-2 {
+    width: 68%;
+    height: 68%;
+    background-image: url('parts/sector.png');
+    transform: rotate(51.5deg);
+    margin-left: 214px;
+    padding-top: 162px;
+  }
+
+  .sector-2-sub-3 {
+    width: 69%;
+    height: 69%;
+    background-image: url('parts/sector.png');
+    transform: rotate(-10.5deg);
+    top: -89px;
+    left: 61%;
+    margin-left: -28%;
+    z-index: 12;
+  }
+
+  /* Sector 3 subsets - adjusted positions */
+  .sector-3-sub-1 {
+    width: 69%;
+    height: 78%;
+    background-image: url('parts/sector.png');
+    transform: rotate(113deg);
+    margin-left: 102px;
+    padding-top: 420px;
+  }
+
+  .sector-3-sub-2 {
+    width: 68%;
+    height: 68%;
+    background-image: url('parts/sector.png');
+    transform: rotate(51.5deg);
+    margin-left: 214px;
+    padding-top: 162px;
+  }
+
+  .sector-3-sub-3 {
+    width: 69%;
+    height: 69%;
+    background-image: url('parts/sector.png');
+    transform: rotate(-10.5deg);
+    top: -89px;
+    left: 61%;
+    margin-left: -28%;
+    z-index: 12;
+  }
